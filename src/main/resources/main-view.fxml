@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.skillgraph.MainController">
+   <top>
+      <HBox styleClass="header" alignment="CENTER_LEFT" spacing="16">
+         <padding>
+            <Insets top="16" right="24" bottom="16" left="24" />
+         </padding>
+         <children>
+            <VBox spacing="2">
+               <children>
+                  <Label styleClass="app-title" text="SkillGraph" />
+                  <Label styleClass="app-subtitle" text="Map your skills. Plan your next move." />
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button styleClass="upload-button" onAction="#handleUpload" text="Upload Resume" />
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox styleClass="panel" spacing="10" prefWidth="300">
+         <padding>
+            <Insets top="16" right="16" bottom="16" left="16" />
+         </padding>
+         <BorderPane.margin>
+            <Insets top="12" right="12" bottom="12" left="12" />
+         </BorderPane.margin>
+         <children>
+            <Label styleClass="panel-title" text="YOUR SKILLS" />
+            <ListView fx:id="skillListView" VBox.vgrow="ALWAYS">
+               <placeholder>
+                  <Label text="No skills yet - add one below" />
+               </placeholder>
+            </ListView>
+            <TextField fx:id="nameField" promptText="Skill name (e.g. Java)" />
+            <TextField fx:id="categoryField" promptText="Category (e.g. Programming)" />
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <Label styleClass="field-label" text="Level (0-5)" />
+                  <ComboBox fx:id="levelBox" />
+               </children>
+            </HBox>
+            <Button styleClass="primary-button" onAction="#handleAddSkill" text="+ Add Skill" />
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <ComboBox fx:id="editLevelBox" maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                            promptText="Level of selected skill" />
+                  <Button styleClass="secondary-button" onAction="#handleSetLevel" text="Set Level" />
+               </children>
+            </HBox>
+            <Button styleClass="secondary-button" onAction="#handleRemoveSkill" text="Remove Selected" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+         <BorderPane.margin>
+            <Insets top="12" right="12" bottom="12" left="12" />
+         </BorderPane.margin>
+         <tabs>
+            <Tab text="Recommendations" closable="false">
+               <content>
+                  <VBox spacing="10">
+                     <padding>
+                        <Insets top="16" right="16" bottom="16" left="16" />
+                     </padding>
+                     <children>
+                        <Label styleClass="panel-title" text="CHOOSE A CAREER AIM" />
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <children>
+                              <ComboBox fx:id="aimBox" maxWidth="Infinity" prefWidth="260"
+                                        HBox.hgrow="ALWAYS" promptText="Choose an aim..." />
+                              <Button styleClass="primary-button" onAction="#handleRecommend"
+                                      text="Get Recommendations" />
+                           </children>
+                        </HBox>
+                        <Label styleClass="field-label" text="Skills to work on:" />
+                        <ListView fx:id="recommendationList" VBox.vgrow="ALWAYS">
+                           <placeholder>
+                              <Label text="Pick an aim above and hit Get Recommendations" />
+                           </placeholder>
+                        </ListView>
+                        <Label fx:id="recommendationSummary" styleClass="hint-label"
+                               text="Pick an aim and hit Get Recommendations." wrapText="true" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Skill Graph" closable="false">
+               <content>
+                  <VBox spacing="10">
+                     <padding>
+                        <Insets top="16" right="16" bottom="16" left="16" />
+                     </padding>
+                     <children>
+                        <Pane fx:id="graphContainer" styleClass="graph-container"
+                              VBox.vgrow="ALWAYS" maxHeight="Infinity">
+                           <children>
+                              <Canvas fx:id="graphCanvas" />
+                           </children>
+                        </Pane>
+                        <Label styleClass="panel-title" text="LINK SKILLS - PREREQUISITE UNLOCKS TARGET" />
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                           <children>
+                              <ComboBox fx:id="prereqBox" prefWidth="170" promptText="Prerequisite" />
+                              <Label styleClass="field-label" text="unlocks" />
+                              <ComboBox fx:id="reqBox" prefWidth="170" promptText="Target skill" />
+                              <Button styleClass="primary-button" onAction="#handleAddDependency" text="Link" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="dependencyList" prefHeight="110">
+                           <placeholder>
+                              <Label text="No links yet - link two skills above" />
+                           </placeholder>
+                        </ListView>
+                        <Button styleClass="secondary-button" onAction="#handleRemoveDependency"
+                                text="Remove Selected Link" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox styleClass="status-bar">
+         <children>
+            <Label fx:id="statusLabel" styleClass="status-text" text="Ready" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

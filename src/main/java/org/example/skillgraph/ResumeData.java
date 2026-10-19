@@ -1,27 +1,36 @@
 package org.example.skillgraph;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * What we managed to read out of a resume: who it belongs to, which skills were
+ * recognised, and the lines of the projects / education / experience sections.
+ *
+ * <p>Like {@link Recommendation}, this is a read-only result object: it copies
+ * the lists it is given, so nobody outside can change it afterwards.
+ */
 public class ResumeData {
-    private String name;
-    private List<Skill> skills = new ArrayList<Skill>();
-    private List<String> prjs = new ArrayList<String>();
-    private List<String> edu = new ArrayList<String>();
-    private List<String> exp = new ArrayList<String>();
 
-    public ResumeData(String name, List<Skill> skills, List<String> prjs, List<String> edu, List<String> exp){
+    private final String name;
+    private final List<Skill> skills;
+    private final List<String> prjs;
+    private final List<String> edu;
+    private final List<String> exp;
+
+    public ResumeData(String name, List<Skill> skills, List<String> prjs,
+                      List<String> edu, List<String> exp) {
         this.name = name;
-        this.skills = skills;
-        this.prjs = prjs;
-        this.edu = edu;
-        this.exp = exp;
+        this.skills = List.copyOf(skills);
+        this.prjs = List.copyOf(prjs);
+        this.edu = List.copyOf(edu);
+        this.exp = List.copyOf(exp);
     }
 
     public String getName() {
         return name;
     }
 
+    /** The skills that were found in the resume. */
     public List<Skill> getSkills() {
         return skills;
     }
@@ -38,4 +47,8 @@ public class ResumeData {
         return exp;
     }
 
+    /** Handy for summaries such as "found 7 skills". */
+    public int skillCount() {
+        return skills.size();
+    }
 }

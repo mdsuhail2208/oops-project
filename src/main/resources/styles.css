@@ -1,0 +1,182 @@
+/* ============ SkillGraph theme ============ */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #eef1f7;
+}
+
+/* ---------- Header ---------- */
+.header {
+    -fx-background-color: #1f2544;
+    -fx-background-radius: 0 0 12 12;
+}
+.app-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+.app-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9aa3c0;
+}
+.upload-button {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 9 18 9 18;
+    -fx-cursor: hand;
+}
+.upload-button:hover { -fx-background-color: #6366f1; }
+.upload-button:pressed { -fx-background-color: #4338ca; }
+
+/* ---------- Panels ---------- */
+.panel {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dde2ee;
+    -fx-border-width: 1;
+}
+.panel-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b7280;
+}
+.field-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+}
+.hint-label {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 12px;
+}
+
+/* ---------- Inputs ---------- */
+.text-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #cdd3e1;
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+}
+.text-field:focused { -fx-border-color: #4f46e5; }
+.combo-box-base {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+/* ---------- Buttons ---------- */
+.primary-button {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+.primary-button:hover { -fx-background-color: #6366f1; }
+.primary-button:pressed { -fx-background-color: #4338ca; }
+
+.secondary-button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #4f46e5;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #c7cdf5;
+    -fx-border-width: 1;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+.secondary-button:hover { -fx-background-color: #eef0ff; }
+
+/* ---------- Lists ---------- */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dde2ee;
+    -fx-border-width: 1;
+}
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #f4f6fd;
+    -fx-background-radius: 9;
+}
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #e4e7fb;
+    -fx-background-radius: 9;
+}
+.list-view .list-cell:filled:selected .label,
+.list-view .list-cell:filled:selected {
+    -fx-text-fill: #1f2937;
+}
+
+.skill-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1f2937;
+}
+.chip {
+    -fx-font-size: 10px;
+    -fx-text-fill: #4f46e5;
+    -fx-background-color: #e8eafd;
+    -fx-background-radius: 9;
+    -fx-padding: 2 8 2 8;
+}
+.level-pips {
+    -fx-text-fill: #f59e0b;
+    -fx-font-size: 10px;
+}
+.dep-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1f2937;
+}
+.dep-arrow {
+    -fx-text-fill: #4f46e5;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* ---------- Tabs ---------- */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 20 8 20;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #ffffff;
+}
+.tab-label {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab:selected .tab-label {
+    -fx-text-fill: #4f46e5;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Graph ---------- */
+.graph-container {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dde2ee;
+    -fx-border-width: 1;
+}
+
+/* ---------- Status bar ---------- */
+.status-bar {
+    -fx-background-color: #1f2544;
+    -fx-padding: 7 16 7 16;
+}
+.status-text {
+    -fx-text-fill: #9aa3c0;
+    -fx-font-size: 12px;
+}

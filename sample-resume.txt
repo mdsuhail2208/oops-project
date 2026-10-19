@@ -1,0 +1,23 @@
+Md Suhail
+Bengaluru, India | md.suhail@example.com | github.com/mdsuhail
+
+SUMMARY
+Third-year computer science student who enjoys backend work.
+Comfortable with the rest of the team and quick to pick up new tools.
+
+SKILLS
+Languages : Java, JavaScript, Python, SQL
+Web       : HTML, CSS, React
+Tools     : Git, Docker, Linux, JUnit
+
+PROJECTS
+SkillGraph - a JavaFX app that maps skills and suggests a learning path.
+Campus Navigator - a small Spring service that helps students find classrooms.
+
+EDUCATION
+B.Tech in Computer Science, 2023-2027
+St. Xavier Institute of Technology, CGPA 8.7
+
+EXPERIENCE
+Teaching assistant for the OOP course, 2025-2026
+Wrote Python scripts to clean up lab attendance data

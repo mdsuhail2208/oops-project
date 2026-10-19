@@ -14,7 +14,6 @@ public class SkillDependency {
     public Skill getPrereq(){
         return prereq;
     }
-
     @Override
     public String toString() {
         return prereq.getName() + "->" + req.getName();
